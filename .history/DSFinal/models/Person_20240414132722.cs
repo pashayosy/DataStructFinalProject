@@ -1,0 +1,1 @@
+namespace Class.DB;
