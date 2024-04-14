@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\vs code projects\\DataStructFinalProject\\DSFinal\\DSFinal.csproj",
+      "projectUniqueName": "E:\\vs code projects\\DataStructFinalProject\\DataStructFinalProject\\DSFinal\\DSFinal.csproj",
       "projectName": "DSFinal",
-      "projectPath": "E:\\vs code projects\\DataStructFinalProject\\DSFinal\\DSFinal.csproj",
+      "projectPath": "E:\\vs code projects\\DataStructFinalProject\\DataStructFinalProject\\DSFinal\\DSFinal.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "E:\\vs code projects\\DataStructFinalProject\\DSFinal\\obj\\",
+      "outputPath": "E:\\vs code projects\\DataStructFinalProject\\DataStructFinalProject\\DSFinal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
