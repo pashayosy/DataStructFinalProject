@@ -1,9 +1,10 @@
-using System.Collections;
+using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace DB.Models;
 
-public class DatabaseEngine<T> : IEnumerable<T> where T : class
+public class DatabaseEngine<T> where T : class
 {
     private Table<T> table;
     private Dictionary<string, object> indices = new Dictionary<string, object>();
@@ -152,15 +153,5 @@ public class DatabaseEngine<T> : IEnumerable<T> where T : class
         //     sb.AppendLine(indexEntry.ToString());
         // }
         return sb.ToString();
-    }
-
-    public IEnumerator<T> GetEnumerator()
-    {
-        return table.GetEnumerator();
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
     }
 }

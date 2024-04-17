@@ -1,32 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "E:\\vs code projects\\DataStructFinalProject\\DataStructFinalProject\\DSFinal\\DSFinal.csproj": {}
+    "/Users/yosypasha/Desktop/visual studio code/DSFP/DataStructFinalProject/DSFinal/DSFinal.csproj": {}
   },
   "projects": {
-    "E:\\vs code projects\\DataStructFinalProject\\DataStructFinalProject\\DSFinal\\DSFinal.csproj": {
+    "/Users/yosypasha/Desktop/visual studio code/DSFP/DataStructFinalProject/DSFinal/DSFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\vs code projects\\DataStructFinalProject\\DataStructFinalProject\\DSFinal\\DSFinal.csproj",
+        "projectUniqueName": "/Users/yosypasha/Desktop/visual studio code/DSFP/DataStructFinalProject/DSFinal/DSFinal.csproj",
         "projectName": "DSFinal",
-        "projectPath": "E:\\vs code projects\\DataStructFinalProject\\DataStructFinalProject\\DSFinal\\DSFinal.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "E:\\vs code projects\\DataStructFinalProject\\DataStructFinalProject\\DSFinal\\obj\\",
+        "projectPath": "/Users/yosypasha/Desktop/visual studio code/DSFP/DataStructFinalProject/DSFinal/DSFinal.csproj",
+        "packagesPath": "/Users/yosypasha/.nuget/packages/",
+        "outputPath": "/Users/yosypasha/Desktop/visual studio code/DSFP/DataStructFinalProject/DSFinal/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/yosypasha/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.312/RuntimeIdentifierGraph.json"
         }
       }
     }

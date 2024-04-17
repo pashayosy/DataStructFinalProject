@@ -17,8 +17,7 @@ databaseEngine.CreateUniqueIndex<int>("Id", (person) => person.Id);
 databaseEngine.CreateNonUniqueIndex<string>("Name", (person) => person.Name);
 databaseEngine.CreateRangeIndex<string>("Surname", (person) => person.Surname);
 Console.WriteLine("----------------------Get Record by id----------------------");
-Person p1 = databaseEngine.GetRecordByUniqueIndex<int>("Id", 1);
-Console.WriteLine(p1);
+Console.WriteLine(databaseEngine.GetRecordByUniqueIndex<int>("Id", 1));
 Console.WriteLine("----------------------Get Record by Name----------------------");
 foreach (var record in databaseEngine.GetRecordsByNonUniqueIndex<string>("Name", "Toper"))
     Console.WriteLine(record);

@@ -8,6 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DSFinal
-build_property.ProjectDir = E:\vs code projects\DataStructFinalProject\DataStructFinalProject\DSFinal\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = /Users/yosypasha/Desktop/visual studio code/DSFP/DataStructFinalProject/DSFinal/

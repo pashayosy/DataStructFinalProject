@@ -5,6 +5,10 @@ namespace DB.Models;
 
 public class DatabaseEngine<T> : IEnumerable<T> where T : class
 {
+    private class Item
+    {
+
+    }
     private Table<T> table;
     private Dictionary<string, object> indices = new Dictionary<string, object>();
 
