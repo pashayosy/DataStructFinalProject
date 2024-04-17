@@ -100,15 +100,7 @@ public class DatabaseEngine<T> where T : class
         }
     }
 
-    public Guid GetGuidByValue(T value)
-    {
-        return table.Get(value);
-    }
-
-    public T getRecordByGuid(Guid guid)
-    {
-        return table.Get(guid);
-    }
+    public T getRe
 
     // Method to get a record by unique index
     public T GetRecordByUniqueIndex<TKey>(string indexName, TKey key)

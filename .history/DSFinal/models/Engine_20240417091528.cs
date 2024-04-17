@@ -100,10 +100,7 @@ public class DatabaseEngine<T> where T : class
         }
     }
 
-    public Guid GetGuidByValue(T value)
-    {
-        return table.Get(value);
-    }
+    public Guid GetGuid
 
     public T getRecordByGuid(Guid guid)
     {

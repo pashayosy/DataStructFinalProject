@@ -102,7 +102,7 @@ public class DatabaseEngine<T> where T : class
 
     public Guid GetGuidByValue(T value)
     {
-        return table.Get(value);
+        return table.get
     }
 
     public T getRecordByGuid(Guid guid)
