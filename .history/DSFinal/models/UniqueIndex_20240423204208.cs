@@ -8,7 +8,7 @@ public class UniqueIndex<TKey, TValue> : IIndex<TKey, TValue>, IEnumerable<TValu
     public Func<TValue, TKey> KeySelector { get; }
 
     //public delegate TValue ChangeFields(TValue value);
-    private Func<TValue, TValue> ChangeFields;
+    public Func<TValue, TValue> ChangeFields;
 
     private Dictionary<TKey, TValue> index;
 

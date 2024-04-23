@@ -118,7 +118,7 @@ public class DatabaseEngine<T> : IEnumerable<Item<T>> where T : class
         {
             return ((UniqueIndex<TKey, Item<T>>)index).Get(key);
         }
-        throw new KeyNotFoundException("Index not found");
+        throw new Exception("Index not found");
     }
 
     // Method to get records by non-unique index
@@ -128,7 +128,7 @@ public class DatabaseEngine<T> : IEnumerable<Item<T>> where T : class
         {
             return ((NonUniqueIndex<TKey, Item<T>>)index).Get(key);
         }
-        throw new KeyNotFoundException("Index not found");
+        throw new Exception("Index not found");
     }
 
     // Method to get records by range index
@@ -138,7 +138,7 @@ public class DatabaseEngine<T> : IEnumerable<Item<T>> where T : class
         {
             return ((RangeIndex<TKey, Item<T>>)index).Get(key);
         }
-        throw new KeyNotFoundException("Index not found");
+        throw new Exception("Index not found");
     }
 
     public override string ToString()

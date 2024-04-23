@@ -7,8 +7,7 @@ public class UniqueIndex<TKey, TValue> : IIndex<TKey, TValue>, IEnumerable<TValu
 {
     public Func<TValue, TKey> KeySelector { get; }
 
-    //public delegate TValue ChangeFields(TValue value);
-    private Func<TValue, TValue> ChangeFields;
+    public delegate TValue ChangeFields(TValue value);
 
     private Dictionary<TKey, TValue> index;
 
@@ -37,7 +36,7 @@ public class UniqueIndex<TKey, TValue> : IIndex<TKey, TValue>, IEnumerable<TValu
             throw new KeyNotFoundException("The specified key does not exist in the index.");
     }
 
-    public void Update(TKey key, Func<TValue, TValue> changeFields)
+    public void Update(TKey key, ChangeFields changeFields)
     {
         if (index.ContainsKey(key))
             index[key] = changeFields(index[key]);
