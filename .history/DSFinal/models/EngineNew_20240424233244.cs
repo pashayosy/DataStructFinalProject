@@ -114,7 +114,7 @@ public class DatabaseEngine<T> : IEnumerable<Item<T>> where T : class
 
     public Item<T> GetRecordByUniqueIndex<TKey>(string indexName, TKey key)
     {
-        if (indices.TryGetValue(indexName, out IBasicIndex index))
+        if (indices.TryGetValue(indexName, out BasicIndex index))
         {
             return ((UniqueIndex<TKey, Item<T>>)index).Get(key);
         }
@@ -124,7 +124,7 @@ public class DatabaseEngine<T> : IEnumerable<Item<T>> where T : class
     // Method to get records by non-unique index
     public IEnumerable<Item<T>> GetRecordsByNonUniqueIndex<TKey>(string indexName, TKey key)
     {
-        if (indices.TryGetValue(indexName, out IBasicIndex index))
+        if (indices.TryGetValue(indexName, out BasicIndex index))
         {
             return ((NonUniqueIndex<TKey, Item<T>>)index).Get(key);
         }
@@ -134,7 +134,7 @@ public class DatabaseEngine<T> : IEnumerable<Item<T>> where T : class
     // Method to get records by range index
     public IEnumerable<Item<T>> GetRecordsByRangeIndex<TKey>(string indexName, TKey key) where TKey : IComparable<TKey>
     {
-        if (indices.TryGetValue(indexName, out IBasicIndex index))
+        if (indices.TryGetValue(indexName, out BasicIndex index))
         {
             return ((RangeIndex<TKey, Item<T>>)index).Get(key);
         }
