@@ -4,7 +4,9 @@ namespace DB.Models;
 
 public class NonUniqueIndex<TKey, TValue> : BaseIndex<TKey, TValue>
 {
-    public NonUniqueIndex(Func<TValue, TKey> keySelector) : base(keySelector) { }
+    public NonUniqueIndex(Func<TValue, TKey> keySelector) : base(keySelector)
+    {
+    }
 }
 
 // public class NonUniqueIndex<TKey, TValue> : IIndex<TKey, TValue>

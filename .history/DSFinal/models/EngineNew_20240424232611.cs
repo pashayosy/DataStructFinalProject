@@ -134,7 +134,7 @@ public class DatabaseEngine<T> : IEnumerable<Item<T>> where T : class
     // Method to get records by range index
     public IEnumerable<Item<T>> GetRecordsByRangeIndex<TKey>(string indexName, TKey key) where TKey : IComparable<TKey>
     {
-        if (indices.TryGetValue(indexName, out BasicIndex index))
+        if (indices.TryGetValue(indexName, out object index))
         {
             return ((RangeIndex<TKey, Item<T>>)index).Get(key);
         }

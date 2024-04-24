@@ -7,4 +7,6 @@ public interface IIndex<TKey, TValue> : BasicIndex
     public void Update(TKey key, TValue oldValue, TValue newValue);
 }
 
-public interface BasicIndex { }
+public interface BasicIndex
+{
+}

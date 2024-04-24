@@ -4,7 +4,9 @@ namespace DB.Models;
 
 public class RangeIndex<TKey, TValue> : BaseIndex<TKey, TValue> where TKey : IComparable<TKey>
 {
-    public RangeIndex(Func<TValue, TKey> keySelector) : base(keySelector) { }
+    public RangeIndex(Func<TValue, TKey> keySelector) : base(keySelector)
+    {
+    }
 
     public IEnumerable<TValue> QueryRange(TKey min, TKey max)
     {

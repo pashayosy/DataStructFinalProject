@@ -2,20 +2,16 @@ using System.Text;
 
 namespace DB.Models;
 
-public class NonUniqueIndex<TKey, TValue> : BaseIndex<TKey, TValue>
-{
-    public NonUniqueIndex(Func<TValue, TKey> keySelector) : base(keySelector) { }
-}
 
-// public class NonUniqueIndex<TKey, TValue> : IIndex<TKey, TValue>
+
+// public class RangeIndex<TKey, TValue> : IIndex<TKey, TValue> where TKey : IComparable<TKey>
 // {
 //     public Func<TValue, TKey> KeySelector { get; }
+//     private SortedDictionary<TKey, List<TValue>> index;
 
-//     private Dictionary<TKey, List<TValue>> index;
-
-//     public NonUniqueIndex(Func<TValue, TKey> keySelector)
+//     public RangeIndex(Func<TValue, TKey> keySelector)
 //     {
-//         index = new Dictionary<TKey, List<TValue>>();
+//         index = new SortedDictionary<TKey, List<TValue>>();
 //         KeySelector = keySelector;
 //     }
 
@@ -26,8 +22,6 @@ public class NonUniqueIndex<TKey, TValue> : BaseIndex<TKey, TValue>
 //         index[key].Add(value);
 //     }
 
-//     public IEnumerable<TValue> Get(TKey key) => index.TryGetValue(key, out List<TValue> values) ? values : Enumerable.Empty<TValue>();
-
 //     public void Remove(TKey key, TValue value)
 //     {
 //         if (index.ContainsKey(key))
@@ -35,6 +29,20 @@ public class NonUniqueIndex<TKey, TValue> : BaseIndex<TKey, TValue>
 //             index[key].Remove(value);
 //             if (index[key].Count == 0)
 //                 index.Remove(key);
+//         }
+//     }
+
+//     public IEnumerable<TValue> Get(TKey key) => index.TryGetValue(key, out List<TValue> values) ? values : Enumerable.Empty<TValue>();
+
+//     public IEnumerable<TValue> QueryRange(TKey min, TKey max)
+//     {
+//         var keysInRange = index.Keys.Where(key => key.CompareTo(min) >= 0 && key.CompareTo(max) <= 0);
+//         foreach (var key in keysInRange)
+//         {
+//             foreach (var value in index[key])
+//             {
+//                 yield return value;
+//             }
 //         }
 //     }
 
@@ -55,9 +63,9 @@ public class NonUniqueIndex<TKey, TValue> : BaseIndex<TKey, TValue>
 //     {
 //         StringBuilder databaseToString = new StringBuilder();
 
-//         foreach (var (key, values) in index)
+//         foreach (var (keys, values) in index)
 //         {
-//             databaseToString.AppendLine($"\nKey: {key.ToString()}");
+//             databaseToString.AppendLine($"\nKey: {keys.ToString()}");
 //             foreach (var value in values)
 //             {
 //                 databaseToString.Append($"Object: {value.ToString()}");
