@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -27,13 +26,7 @@ public class UniqueIndex<TKey, TValue> : IIndex<TKey, TValue>, IEnumerable<TValu
         index[key] = value;
     }
 
-    public IEnumerable<TValue> Get(TKey key)
-    {
-        if (index.TryGetValue(key, out TValue? value))
-            yield return value;
-        else
-            throw new ArgumentException($"Value with this key {key} is not exist");
-    }
+    public TValue Get(TKey key) => index.TryGetValue(key, out TValue? value) ? IEnumerable<TValue>.value : throw new ArgumentException($"Value with this key {key} is not exist");
 
     public void Remove(TKey key, TValue value) => index.Remove(key);
 

@@ -11,4 +11,5 @@ public interface IIndex<TKey, TValue> : IBasicIndex
 
 public interface IBasicIndex
 {
+    public dynamic Get(dynamic dynamic);
 }

@@ -9,6 +9,4 @@ public interface IIndex<TKey, TValue> : IBasicIndex
     public IEnumerable<TValue> Get(TKey key);
 }
 
-public interface IBasicIndex
-{
-}
+public interface IBasicIndex { }

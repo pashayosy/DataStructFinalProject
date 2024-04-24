@@ -11,4 +11,7 @@ public interface IIndex<TKey, TValue> : IBasicIndex
 
 public interface IBasicIndex
 {
+    public void Add();
+    public void Remove();
+    public void Update();
 }

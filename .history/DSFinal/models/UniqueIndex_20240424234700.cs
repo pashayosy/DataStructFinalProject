@@ -27,13 +27,7 @@ public class UniqueIndex<TKey, TValue> : IIndex<TKey, TValue>, IEnumerable<TValu
         index[key] = value;
     }
 
-    public IEnumerable<TValue> Get(TKey key)
-    {
-        if (index.TryGetValue(key, out TValue? value))
-            yield return value;
-        else
-            throw new ArgumentException($"Value with this key {key} is not exist");
-    }
+    public IEnumerable<TValue> Get(TKey key) => index.TryGetValue(key, out TValue? value) ? Enumerable<TValue>.Repeat(value, 1) : throw new ArgumentException($"Value with this key {key} is not exist");
 
     public void Remove(TKey key, TValue value) => index.Remove(key);
 
