@@ -18,14 +18,22 @@ public class DatabaseEngine<T> : IEnumerable<T> where T : class
     public void CreateUniqueIndex<TKey>(string indexName, Func<T, TKey> keySelector)
     {
         var index = new UniqueIndex<TKey, T>(keySelector);
-        CreateIndex(index, indexName, keySelector);
+        foreach (var item in table)
+        {
+            index.Add(keySelector(item), item);
+        }
+        indices[indexName] = index;
     }
 
     // Method to create a range index
     public void CreateRangeIndex<TKey>(string indexName, Func<T, TKey> keySelector) where TKey : IComparable<TKey>
     {
         var index = new RangeIndex<TKey, T>(keySelector);
-        CreateIndex(index, indexName, keySelector);
+        foreach (var item in table)
+        {
+            index.Add(keySelector(item), item);
+        }
+        indices[indexName] = index;
     }
 
 
@@ -33,11 +41,6 @@ public class DatabaseEngine<T> : IEnumerable<T> where T : class
     public void CreateNonUniqueIndex<TKey>(string indexName, Func<T, TKey> keySelector)
     {
         var index = new NonUniqueIndex<TKey, T>(keySelector);
-        CreateIndex(index, indexName, keySelector);
-    }
-
-    private void CreateIndex<TKey>(IIndex<TKey,T> index, string indexName, Func<T, TKey> keySelector)
-    {
         foreach (var item in table)
         {
             index.Add(keySelector(item), item);
